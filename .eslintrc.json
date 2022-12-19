@@ -1,10 +1,18 @@
 {
-    "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:tailwindcss/recommended",
+        "plugin:react/recommended"
+    ],
     "plugins": [
+        "@typescript-eslint",
         "tailwindcss",
         "simple-import-sort",
         "no-relative-import-paths"
     ],
+    "parser": "@typescript-eslint/parser",
     "rules": {
         // increase the severity of rules so they are auto-fixable
         "simple-import-sort/imports": "error",
@@ -13,6 +21,8 @@
         "no-relative-import-paths/no-relative-import-paths": [
             "warn",
             { "allowSameFolder": true, "rootDir": "", "prefix": "@" }
-        ]
+        ],
+        "react/self-closing-comp": "error",
+        "react/react-in-jsx-scope": "off"
     }
 }
